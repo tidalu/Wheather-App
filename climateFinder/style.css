@@ -1,0 +1,342 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=ZCOOL+QingKe+HuangYou&display=swap'); */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+:root{
+    --primaryBackground: #100f14;
+    --greyColor: #1e1e1e;
+    --poppinsFont: "Aldrich", sans-serif;
+    --liFonts: 18px;
+    --fontColor: #293943;
+    --blueBlackColor: rgb(17, 16, 19);
+}
+
+body{
+    color: #fff;
+    background: var(--primaryBackground);
+    font-family: var(--poppinsFont);
+}
+
+.container{
+    margin: 0 auto;
+    max-width: 1280px;
+    width: 90%;
+    border: 4px green solid;
+    padding: 10px;
+  }
+
+.nav-container{
+    width: 100%;
+    height: 15vh;
+    background-color: var(--primaryBackground);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inlineBlock{
+    display: flex;
+    list-style-type: none;   
+}
+
+/* .inputBox{
+    width: 500px;
+    height: 50px;
+    border: none;
+    border-radius: 25px;
+    background-color: var(--greyColor);
+    font-weight: bold;
+    font-size: 18px;
+    padding: 0px 0px 0px 15px;
+} */
+
+.liFonts{
+    font-size: var(--liFonts);
+    color: rgb(17, 16, 19);
+}
+
+
+
+/* start main contents */
+
+/* list of days */
+.section1 .inlineBlock li{
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+/* end of list of days */
+
+/* info content */
+.info{
+    width: 200px;
+    height: 200px;
+    background-color: #bcd8ed;
+    border-radius: 30px;
+}
+
+.dayAndTime{
+    width: 100%;
+    height: 60px;
+    background-color: #aecadf;
+    border-radius: 30px 30px 0 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 20px;
+}
+
+.days {
+    width: 100px;
+    background: #1b1b1d;
+}
+
+.weekDays{
+    width: 100%;
+    height: 60px;
+    background-color: #1b1b1d;
+    border-radius: 30px 30px 0 0px;
+    border-bottom: #444 1px solid;
+}
+
+.container .info .dayAndTime ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    font-weight: bold;
+}
+
+.degAndDesc{
+    margin: 0 auto;
+    max-width: 1280px;
+    width: 90%;
+    padding: 10px;
+    margin: -20px 0 0 16px;
+    font-size: 24px;
+}
+
+.iconsImg{
+    width: 90px;
+    height: auto;
+}
+.container .info .degAndDesc ul{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    font-weight: bold;
+    color: var(--blueBlackColor);
+}
+
+.descriptionInfo{
+    display: grid;
+    margin-left: 20px;
+    justify-content: space-between;
+    font-size: 10px;
+    margin-top: -20px;
+    color: var(--fontColor);
+}
+
+.descriptionInfo span{
+    color: var(--blueBlackColor);
+}
+
+.weekDays{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-weight: bold;
+}
+
+.otherDays ul{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    margin: -15px 0 0 0;
+    text-align: center;
+}
+
+
+/* end of info content */
+
+
+/* end of main contents */
+
+
+
+/* Ulugbek Nav design */
+
+
+/* style-nav */
+.nav-container {
+    display: flex;
+    width: 90%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid #ccc; */
+}
+
+
+/* style for elements on it  */
+.nav-elements {
+    flex-basis: 20%;
+    height: 50px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    /* border: 1px solid yellowgreen; */
+
+}
+
+
+
+.item_left {
+    width: auto;
+    text-align: left;
+    
+}
+
+.item_left span {
+    font-weight: 600;
+}
+
+.item_center {
+    flex-basis: 60%;
+}
+.item_right {
+    display: flex;
+    width: 20vmax;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+.nav-icon1 {
+    padding-right:10px;
+    
+    }
+    
+.nav-search {
+    display: flex;
+    align-items: center;
+
+}
+
+.nav-search .search_button {
+    background-color: #1e1e1d;
+    border-radius: 0 25px 25px 0;
+    height: 50px;
+    width: 5vw;
+    display: flex;
+    justify-content: flex-end;
+    justify-items: center;
+    /* padding-right: 30px; */
+
+}
+
+/* Night/Light mode switch style */
+.turn_on {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--greyColor);
+    border-radius: 25px;
+    height: 50px;
+    width: 100px;
+    padding: 0 8px 0 8px;
+    position: relative;
+    cursor: pointer;
+    
+}
+
+.turn_on::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #aecadf;
+    padding: 0;
+    margin: 0;
+    
+    
+
+}
+
+/* changing the night/light mode */
+.turn_off::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #aecadf;
+    padding: 0;
+    margin: 0;
+    
+
+}
+
+.mode {
+    height: 32px;
+    z-index: 111;
+
+}
+
+
+/* Languages options style */
+.language {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+}
+
+
+/* search bar style */
+.inputBox{
+    width: 40vw;
+    height: 50px;
+    border: none;
+    border-radius: 25px 0 0 25px;
+    background-color: var(--greyColor);
+    font-weight: bold;
+    font-size: 18px;
+    color: #ccc;
+    padding: 0px 0px 0px 15px;
+}
+
+.inputBox:focus {
+    outline: none;
+}
+
+input::placeholder{
+    font-size: 15px;
+    font-weight: 200;
+    font-family: "Aldrich", sans-serif;
+}
+
+.nav_icon2 {
+    transform: scale(0.7);
+}
+
+
