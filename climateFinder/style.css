@@ -28,7 +28,7 @@ body {
     margin: 0 auto;
     max-width: 1280px;
     width: 90%;
-    border: 4px green solid;
+    /* border: 4px green solid; */
     padding: 10px;
 }
 
@@ -358,7 +358,10 @@ input::placeholder {
 .google-map-heading {
     width: 73%;
     display: flex;
+    /* changes */
     justify-content: space-between;
+    align-items: center;
+    /* here */
     padding: 0 10px;
 }
 
@@ -371,6 +374,11 @@ input::placeholder {
 .google-map-heading a {
     height: 30px;
     width: 100px;
+    /* changes */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* herer */
     text-align: center;
     border-radius: 15px;
 
@@ -396,15 +404,15 @@ input::placeholder {
     margin-top: 10px;
     width: 90%;
     height: 400px;
-    border: 2px green solid;
+    /* border: 2px green solid; */
 }
 
 .google-map {
-
     width: 100%;
     height: 332px;
-    border: 2px red solid;
+    /* border: 2px red solid; */
     border-radius: 30px;
+    outline: none;
 
 }
 
@@ -421,10 +429,11 @@ input::placeholder {
 
 
 .cities2 {
+    background: #1b1b1b;
     display: flex;
     width: 300px;
     height: 100px;
-    border: 2px gold solid;
+    /* border: 2px gold solid; */
     border-radius: 30px;
 }
 
