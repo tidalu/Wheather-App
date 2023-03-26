@@ -5,44 +5,26 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: all 0.3s ease-in-out;
+    
 }
 
 :root {
-    --primaryBackground: #100f14;
+    --primaryBackground: #0d0c10;
     --main--background: #aecadf;
     --secondary-blue: #bcd8ed;
-    --whitish-color: #cccccc;
-    --greyColor: #1e1e1e;
+    --whitish-color: #fdfdfd;
+    --greyColor: rgba(0, 0, 0, .4);
     --aldrichFont: "Aldrich", sans-serif;
     --liFonts: 18px;
     --transparent_white: rgba(255, 255, 255, 0.5);
     --transparent_white_lighter: rgba(255, 255, 255, 0.15);
-    --days-background: #1b1b1b;
+    --days-background: rgba(2, 0, 0, .5);
     --fontColorPrimary: #ffffff;
     --fontColor: #293943;
-    --shadow-main: cyan;
+    --shadow-main: rgb(0, 166, 255);
     --blueBlackColor: rgb(17, 16, 19);
 }
-
-
-
-html[data-theme="light"] {
-    --primaryBackground: #100f14;
-    --main--background: #aecadf;
-    --secondary-blue: #bcd8ed;
-    --whitish-color: #cccccc;
-    --greyColor: #1e1e1e;
-    --aldrichFont: "Aldrich", sans-serif;
-    --liFonts: 18px;
-    --transparent_white: rgba(255, 255, 255, 0.5);
-    --transparent_white_lighter: rgba(255, 255, 255, 0.15);
-    --days-background: #1b1b1b;
-    --fontColorPrimary: #ffffff;
-    --fontColor: #293943;
-    --shadow-main: cyan;
-    --blueBlackColor: rgb(17, 16, 19);
-}
-
 
 body {
     color: var(--fontColorPrimary);
@@ -124,13 +106,13 @@ body {
 
 .today_info {
     min-width: 170px;
-
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
 }
 
 .today_info:hover {
     transform: scale(1.05);
     box-shadow: 5px 5px 15px;
-    transition: 0.6s;
 }
 
 .dayAndTime {
@@ -155,7 +137,8 @@ body {
     width: 7.8125%;
     min-width: 70px;
     background: var(--days-background);
-    /* background: rgba(255, 255, 255, 0.3);  when there is a image on the background we can apply*/
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
 }
 
 .days:hover,
@@ -167,9 +150,10 @@ body {
 .weekDays {
     width: 100%;
     height: 60px;
-    background-color: var(--days-background);
+    background-color: rgba(0, 0, 0, 0.4);
     border-radius: 30px 30px 0 0px;
     border-bottom: #444 1px solid;
+
 }
 
 .container .info .dayAndTime ul {
@@ -184,19 +168,43 @@ body {
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
+    align-items: center;
     min-width: 170px;
     overflow: hidden;
     flex-basis: 26.56%;
     height: 200px;
     border-radius: 30px;
     background-color: var(--main--background);
-    box-shadow: 0 5px 15px var(--primaryBackground) inset;
-    /* border: 3px solid var(--whitish-color); */
+    box-shadow: 0px 2px 15px 2px rgb(135, 10, 135);
+    border: 1px solid var(--whitish-color);
     padding: 20px;
+    animation: shadow-scale 1s infinite;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
 }
 
+.quiz_redirection:hover {
+    transform: scale(0.98);
+}
 
+@keyframes shadow-scale {
+    0% {
+        box-shadow: 0px 2px 15px 2px rgb(135, 10, 135);
+    }
+
+    50% {
+        box-shadow: 0px 4px 25px 4px rgb(135, 10, 135);
+    }
+
+    100% {
+        box-shadow: 0px 2px 15px 2px rgb(135, 10, 135);
+    }
+}
+
+.purpleColor {
+    color: purple;
+}
 
 
 .quiz_heading {
@@ -284,10 +292,10 @@ body {
 
 /* Dark and Light mode */
 .mode {
-    width: 100px;
-    height: 50px;
-    border-radius: 25px;
-    background: var(--greyColor);
+    /* width: 100px;
+    height: 50px; */
+    /* border-radius: 25px; */
+    /* background: var(--greyColor); */
 }
 
 .circleChange {
@@ -309,10 +317,12 @@ body {
 .nav-container {
     padding-top: 40px;
     display: flex;
+    margin: 0 auto;
+    gap: 1%;
     width: 90%;
     flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
 }
 
@@ -322,7 +332,7 @@ body {
     flex-basis: 20%;
     height: 50px;
     display: flex;
-    
+
     align-items: center;
 }
 
@@ -357,6 +367,37 @@ body {
 
 }
 
+.search-box {
+    position: relative;
+
+}
+
+.suggestions {
+    list-style-type: none;
+    position: absolute;
+    width: 100%;
+    top: 38px;
+    left: 20;
+    right: 0;
+    background-color: var(--greyColor);
+    border-radius: 15px;
+    padding: 5px 10px 5px 20px;
+    margin-top: 10px;
+    z-index: 999;
+    max-height: 150px;
+    overflow-y: auto;
+    
+}
+
+.suggestions li {
+    
+    cursor: pointer;
+}
+
+.suggestions li:hover {
+    color: rgb(0, 229, 255);
+}
+
 .nav-search .search_button {
     background-color: var(--greyColor);
     border-radius: 0 25px 25px 0;
@@ -367,6 +408,7 @@ body {
     justify-items: center;
     border-left: 1px solid #444;
     transition: all 0.2s ease-in-out;
+    border: 1px solid var(--secondary-blue);
 }
 
 .nav-search .search_button:hover {
@@ -390,6 +432,7 @@ body {
     font-size: 18px;
     color: var(--whitish-color);
     padding: 0px 0px 0px 15px;
+    border: 1px solid var(--secondary-blue);
 }
 
 .inputBox:focus {
@@ -407,6 +450,10 @@ input::placeholder {
     transform: scale(0.7);
 }
 
+a {
+    text-decoration: none;
+    color: #fff;
+}
 
 /*name of Two big main*/
 .two-mains-name {
@@ -482,7 +529,10 @@ input::placeholder {
     height: 100%;
     border-radius: 30px;
     outline: none;
+}
 
+iframe:hover {
+    transform: scale(0.98);
 }
 
 .large-cities {
@@ -502,6 +552,8 @@ input::placeholder {
     width: 305;
     height: 102.8px;
     border-radius: 30px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
 }
 
 .texts {
@@ -638,13 +690,18 @@ figure>img {
 }
 
 
+
 /* responsive design for tablets */
 @media only screen and (max-width: 978px) {
-    .container, .second-main {
+
+    .container,
+    .second-main {
         transform: scale(0.9);
     }
 
-    .navElements, .inputBox, .nav-search .search_button{
+    .navElements,
+    .inputBox,
+    .nav-search .search_button {
         height: 40px;
 
     }
@@ -653,7 +710,8 @@ figure>img {
         font-size: 14px;
     }
 
-    .checked, .checked_color {
+    .checked,
+    .checked_color {
         width: 100px;
     }
 
@@ -663,19 +721,22 @@ figure>img {
         gap: 4%;
     }
 
-    
+
     .mode {
-        flex-basis: 10%;
-        height: 25px;
-        width: 75px;
+        flex-basis: 15%;
+        height: 0;
+        width: 0;
         
+
     }
+
     .circleChange {
         height: 25px;
         width: 25px;
-        
-        
+
+
     }
+
     .days {
         order: 2;
         flex-basis: 13.3%;
@@ -687,12 +748,16 @@ figure>img {
         flex-flow: row nowrap;
         justify-content: space-between;
         width: 70%;
-        
+
     }
 
     .liFonts li {
         flex-basis: 40%;
         font-size: 25px;
+    }
+
+    .nav_icon2 {
+        transform: scale(0.5);
     }
 
     .today_info {
@@ -708,25 +773,25 @@ figure>img {
         gap: 16%;
         font-size: 1rem;
         padding: 0;
-        
+
     }
+
     .descriptionInfo .inlineBlock {
         display: flex;
         justify-content: center;
         align-items: center;
         padding-left: 30px;
 
-        
-        
+
+
     }
 
     .quiz_redirection {
         order: 1;
         flex-basis: 31%;
-        
-
     }
 }
+
 
 
 @media only screen and (max-width: 632px) {
@@ -735,27 +800,92 @@ figure>img {
         flex-basis: 100%;
         margin-bottom: 30px;
     }
+
     .days {
         order: 2;
         flex-basis: 30%;
     }
-    
+
     .quiz_redirection {
         order: 3;
-        margin-top: 30px ;
+        margin-top: 30px;
         flex-basis: 100%;
     }
 
-
-
-    .nav_icon2 {
-        transform: scale(0.5);
+    .second-main {
+        display: flex;
+        flex-flow: row wrap;
+        min-height: 100%;
     }
 
-    .nav-container {
-        
+    .google-map {
+        flex-basis: 100%;
+
+    }
+
+    .large-cities {
+        flex-basis: 100%;
+
     }
 
     
+
+    .cities {
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .text {
+        flex-basis: 50%;
+
+    }
+
+    .img-degreee {
+        flex-basis: 50%;
+        margin-left: auto;
+        align-items: center;
+    }
+
+    .item_left,
+    
+    .nav-search {
+        width: 40%;
+        order: -1;
+
+    }
+
+    .item_right {
+        width: 0%;
+    }
+
+    
+
+    div.navElements.center {
+        min-width: 100%;
+        margin-top: 10px;
+    }
+
+    .nav {
+        display: flex;
+        justify-content: space-around;
+        gap: 20%;
+    }
+
+    .footer {
+        margin-top: 350px;
+    }
+
+    .inputBox {
+        width: 79vw;
+        justify-content: center;
+    }
+
+    .search_button {
+        min-width: 50px;
+        width: 10vw;
+    }
+
     
 }

@@ -14,59 +14,48 @@
     <!-- Style CSS link -->
     <link rel="stylesheet" href="style.css">
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Font Awesome link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 </head>
 
 <!-- Body -->
 
-<body>
+<body onload="getWeatherData2()">
 
 
     <!-- Navigation Bar -->
-    <div class="container">
+    <div class="nav-container nav">
         <div class="navElements item_left">
             <img src="icons/location-marker_dark.svg" alt="location-icon" class="nav-icon1">
             <p><span id="currentCity">City</span>,<span id="currentCountry">Country</span></p>
         </div>
-        <div class="navElements ">
+        <div class="navElements center">
             <ul class="inlineBlock nav-search">
-                <li>
+                <li class="search-box">
                     <input type="text" class="inputBox" id="inputValue" placeholder=" Search city...">
+                    <ul class="suggestions"></ul>
                 </li>
                 <li class="search_button" id="searchBtn">
-                    <img src="icons/search_for_dark_mode.png" class="nav_icon2" alt="search">
+                    <img src="icons/search_for_dark_mode.png" class="nav_icon2" onclick="weeklyInfo()" alt="search">
                 </li>
             </ul>
         </div>
         <div class="navElements item_right">
+            
             <div class="mode">
-                <div class="circleChange"></div>
+                
+                <!-- <div class="circleChange"></div> -->
             </div>
         </div>
     </div>
     <!-- End of Navigation Bar -->
 
 
+    <br>
 
     <div class="content">
-
-
-
-
         <!-- Main Contents -->
-        <div class="container">
-            <!-- Changing Information based on days... -->
-            <section class="section1">
-                <ul class="inlineBlock">
-                    <li class="checked" id="checked_color">Today</li>
-                    <li class="checked">Tomorrow</li>
-                    <li class="checked">Week</li>
-                </ul>
-            </section>
-        </div>
-
-        <br>
 
         <div class="container">
             <!-- Weather Info -->
@@ -74,7 +63,7 @@
                 <div class="dayAndTime">
                     <ul class="inlineBlock liFonts">
                         <!-- Main info about the Current Weather and more -->
-                        <li id="currentDay">Monday</li>
+                        <li id="day1">Monday</li>
                         <li id="currentTime">11:42 PM</li>
                     </ul>
                 </div>
@@ -84,18 +73,21 @@
                     <ul class="inlineBlock">
                         <li>
                             <!-- Degree -->
-                            <h1><span id="currentDegree">--</span>°</h1>
+                            <h1 id="day1Temp">--</h1>
                         </li>
                         <li>
                             <!-- Weather Img -->
-                            <img class="iconsImg"  id="current_smth" src="icons/clear-cloudy.svg" alt="weather img" />
+                            <img class="iconsImg" id="iconWeatherImage" src="icons/clear-cloudy.svg"
+                                alt="weather img" />
                         </li>
                     </ul>
                 </div>
 
                 <!-- p tags for more info -->
                 <div class="descriptionInfo">
-                    <p>Real feel: <span id="currentRealFeel">--</span>°</p>
+                    <p>Real feel: <span id="currentRealFeel">--</span>°
+                        <span id="description">--</span>
+                    </p>
                     <p>Wind N-E: <span id="currentWindSpeed">--</span>km/h</p>
                     <p>Humidity: <span id="currentHumidity">--</span>%</p>
                 </div>
@@ -107,13 +99,13 @@
             <!-- More info for days in a week -->
             <div class="info days">
                 <div class="weekDays">
-                    <p>Tue</p>
+                    <p id="day2">loading...</p>
                 </div>
                 <div class="otherDays">
                     <ul>
                         <li><img class="iconsImg" src="icons/hail.svg" alt="weather img"></li>
                         <li>
-                            <h2>10°</h2>
+                            <h2 id="day2Temp">--°</h2>
                         </li>
                     </ul>
                 </div>
@@ -121,13 +113,13 @@
 
             <div class="info days">
                 <div class="weekDays">
-                    <p>Wed</p>
+                    <p id="day3">loading...</p>
                 </div>
                 <div class="otherDays">
                     <ul>
                         <li><img class="iconsImg" src="icons/drizzle-sunny.svg" alt="weather img"></li>
                         <li>
-                            <h2>15°</h2>
+                            <h2 id="day3Temp">--°</h2>
                         </li>
                     </ul>
                 </div>
@@ -135,13 +127,13 @@
 
             <div class="info days">
                 <div class="weekDays">
-                    <p>Thu</p>
+                    <p id="day4">loading...</p>
                 </div>
                 <div class="otherDays">
                     <ul>
                         <li><img class="iconsImg" src="icons/snow-flurries.svg" alt="weather img"></li>
                         <li>
-                            <h2>7°</h2>
+                            <h2 id="day4Temp">--°</h2>
                         </li>
                     </ul>
                 </div>
@@ -149,13 +141,13 @@
 
             <div class="info days">
                 <div class="weekDays">
-                    <p>Fri</p>
+                    <p id="day5">loading...</p>
                 </div>
                 <div class="otherDays">
                     <ul>
                         <li><img class="iconsImg" src="icons/windy.svg" alt="weather img"></li>
                         <li>
-                            <h2>12°</h2>
+                            <h2 id="day5Temp">--°</h2>
                         </li>
                     </ul>
                 </div>
@@ -163,13 +155,13 @@
 
             <div class="info days">
                 <div class="weekDays">
-                    <p>Sat</p>
+                    <p id="day6">loading...</p>
                 </div>
                 <div class="otherDays">
                     <ul>
                         <li><img class="iconsImg" src="icons/clear-cloudy.svg" alt="weather img"></li>
                         <li>
-                            <h2>16°</h2>
+                            <h2 id="day6Temp">--°</h2>
                         </li>
                     </ul>
                 </div>
@@ -177,29 +169,27 @@
 
             <div class="info days">
                 <div class="weekDays">
-                    <p>Sun</p>
+                    <p id="day7">loading...</p>
                 </div>
                 <div class="otherDays">
                     <ul>
                         <li><img class="iconsImg" src="icons/hail.svg" alt="weather img"></li>
                         <li>
-                            <h2>9°</h2>
+                            <h2 id="day7Temp">--°</h2>
                         </li>
                     </ul>
                 </div>
             </div>
 
-            <div class="quiz_redirection">
-                <!-- <div class="quiz_heading">
-                <img src="images/cloudy-animational.gif" class="animated_image" alt="animation">
-                <p>Quiz</p> -->
-            </div>
 
+            <a class="quiz_redirection" href="game/game.html" target="_blank">
+                <h1>Game</h1>
+                <p>for <span class="purpleColor">Kids</span></p>
+            </a>
         </div>
 
 
         <!---second main-->
-        <!--main's name -->
         <!--start of second main-->
         <div class="second-main">
             <!--map-->
@@ -226,19 +216,19 @@
                     <div class="texts">
                         <ul>
                             <li>
-                                <p>US</p>
+                                <p id="largeCity1Country">loading...</p>
                             </li>
                             <li>
-                                <h3>California</h3>
+                                <h3 id="largeCity1">loading...</h3>
                             </li>
                             <li>
-                                <h5>Mostly Sunny</h5>
+                                <h5 id="largeCity1Description">loading...</h5>
                             </li>
                         </ul>
                     </div>
                     <div class="img-degreee">
                         <img class="iconsImg2" src="icons/clear-cloudy.svg" alt="weather img">
-                        <h4>29°</h4>
+                        <h4 id="largeCity1Temp">loading...</h4>
                     </div>
 
 
@@ -247,19 +237,19 @@
                     <div class="texts">
                         <ul>
                             <li>
-                                <p>US</p>
+                                <p id="largeCity2Country">loading...</p>
                             </li>
                             <li>
-                                <h3>California</h3>
+                                <h3 id="largeCity2">loading...</h3>
                             </li>
                             <li>
-                                <h5>Mostly Sunny</h5>
+                                <h5 id="largeCity2Description">loading...</h5>
                             </li>
                         </ul>
                     </div>
                     <div class="img-degreee">
                         <img class="iconsImg2" src="icons/clear-cloudy-night.svg" alt="weather img">
-                        <h4>29°</h4>
+                        <h4 id="largeCity2Temp">loading...</h4>
                     </div>
 
 
@@ -268,21 +258,20 @@
                     <div class="texts">
                         <ul>
                             <li>
-                                <p>US</p>
+                                <p id="largeCity3Country">loading..</p>
                             </li>
                             <li>
-                                <h3>California</h3>
+                                <h3 id="largeCity3">loading...</h3>
                             </li>
                             <li>
-                                <h5>Mostly Sunny</h5>
+                                <h5 id="largeCity3Description">loading...</h5>
                             </li>
                         </ul>
                     </div>
                     <div class="img-degreee">
                         <img class="iconsImg2" src="icons/drizzle-sunny.svg" alt="weather img">
-                        <h4>29°</h4>
+                        <h4 id="largeCity3Temp">loading...</h4>
                     </div>
-
 
                 </div>
 
@@ -291,9 +280,9 @@
             <!--end od large cities class-->
         </div>
         <!--end of second main-->
-        
+
     </div>
-    
+
     <div class="footer">
         <div class="footer-elements">
             <p>Copyright&copy; 2023</p>
@@ -305,6 +294,7 @@
             <p>Developed by <span>Uzbek Coders</span></p>
         </div>
     </div>
+    
     <script src="app.js"></script>
 </body>
 
