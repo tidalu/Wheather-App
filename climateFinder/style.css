@@ -352,45 +352,36 @@ body {
     width: 20vmax;
     justify-content: center;
     align-items: center;
-
-
 }
 
 .nav-icon1 {
     padding-right: 10px;
-
 }
 
 .nav-search {
     display: flex;
     align-items: center;
-
 }
 
 .search-box {
     position: relative;
-
 }
 
 .suggestions {
     list-style-type: none;
     position: absolute;
-    width: 100%;
-    top: 38px;
-    left: 20;
-    right: 0;
+    width: 95%;
+    top: 100%;
+    left: 15px;
     background-color: var(--greyColor);
-    border-radius: 15px;
+    border-radius: 0 0px 15px 15px;
     padding: 5px 10px 5px 20px;
-    margin-top: 10px;
     z-index: 999;
     max-height: 150px;
-    overflow-y: auto;
-    
+    overflow-y: auto; 
 }
 
 .suggestions li {
-    
     cursor: pointer;
 }
 
@@ -721,7 +712,6 @@ figure>img {
         gap: 4%;
     }
 
-
     .mode {
         flex-basis: 15%;
         height: 0;
@@ -799,12 +789,17 @@ figure>img {
         order: 1;
         flex-basis: 100%;
         margin-bottom: 30px;
+        height: 230px;
+    }
+    .descriptionInfo {
+        transform: scale(0.9);
     }
 
     .days {
         order: 2;
         flex-basis: 30%;
     }
+
 
     .quiz_redirection {
         order: 3;
@@ -841,6 +836,7 @@ figure>img {
         flex-basis: 50%;
 
     }
+
 
     .img-degreee {
         flex-basis: 50%;
@@ -887,5 +883,16 @@ figure>img {
         width: 10vw;
     }
 
+    .content {
+        margin-top: -80px;
+    }
+
+    .footer p {
+        font-size: 12px;
+    }
+
+    .footer-elements img {
+        transform: scale(1.3);
+    }
     
 }
