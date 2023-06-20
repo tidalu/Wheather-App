@@ -306,26 +306,7 @@ function CheckDay(day){
   }
 
 
-  $(document).ready(function() {
-    $('#inputValue').keyup(function() {
-        var query = $(this).val();
-        if(query != '') {
-            $.ajax({
-                url: 'https://api.openweathermap.org/data/2.5/find?q=' + query + '&type=like&mode=json&units=metric&APPID=8058e2e53a8cdc888b244254fc6ceeed',
-                method: 'GET',
-                dataType: 'json',
-                success: function(data) {
-                    var suggestions = [];
-                    $.each(data.list, function(index, value) {
-                        suggestions.push('<li>' + value.name + ', ' + value.sys.country + '</li>');
-                    });
-                    $('.suggestions').html(suggestions.join(''));
-                }
-            });
-        } else {
-            $('.suggestions').empty();
-        }
-    });
+   
 
     $(document).on('click', '.suggestions li', function() {
         var city = $(this).text();
